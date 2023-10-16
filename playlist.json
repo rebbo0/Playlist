@@ -1,29 +1,18 @@
 [
   {
     "name": "My Mix",
+    "owner": "Davidoida",
     "titles": [
       {
-        "title": ""
+        "title": "Call me maybe",
+        "interpret": "Carly Rae Jepsen",
+        "length": "2:20"
       },
-      {}
+      {
+        "title": "Big City Life",
+        "interpret": "Mattafix",
+        "length": "3:10"
+      }
     ]
-  },
-  {
-    "name": "Rudolf",
-    "goofyness": "3",
-    "nickname": "NETZ-Kotz",
-    "url": "Cat25.png",
-    "friend": {
-      "name": "Dape",
-      "hometown": "Scheibbs",
-      "message": "Cats are phenomenal"
-    }
-  },
-  {
-    "name": "Edward",
-    "goofyness": "6",
-    "nickname": "Vampir-Kotz",
-    "url": "Cat063.png",
-    "friend": "none"
   }
 ]
