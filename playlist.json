@@ -1,18 +1,37 @@
-[
-  {
-    "name": "My Mix",
-    "owner": "Davidoida",
-    "titles": [
-      {
-        "title": "Call me maybe",
-        "interpret": "Carly Rae Jepsen",
-        "length": "2:20"
-      },
-      {
-        "title": "Big City Life",
-        "interpret": "Mattafix",
-        "length": "3:10"
-      }
+{
+  "playlists":[
+    {
+        "name": "My Mix",
+        "owner": "Davidoida",
+        "titles": [
+          {
+            "title": "Call me maybe",
+            "interpret": "Carly Rae Jepsen",
+            "length": "2:20"
+          },
+          {
+            "title": "Big City Life",
+            "interpret": "Mattafix",
+            "length": "3:10"
+          }
+        ]
+    },
+    {
+      "name": "My cool Mix",
+      "owner": "Robin123",
+      "titles": [
+        {
+          "title":"All I Want for Christmas Is You",
+          "interpret":"Mariah Carey",
+          "length":"4:01"
+        },
+        {
+          "title":"Last Christmas",
+          "interpret":"Wham!",
+          "length":"4:27"
+        }
+      ]
+    }
     ]
-  }
-]
+  
+}
