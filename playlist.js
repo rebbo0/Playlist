@@ -3,7 +3,7 @@ var url = "playlist.json";
 
 xmlhttp.onreadystatechange = function () {
   var jsonData = JSON.parse(this.responseText);
-  displayPlaylist(jsonData.playlists);
+  displayPlaylist(jsonData);
 };
 
 xmlhttp.open("GET", url);
@@ -13,7 +13,7 @@ function displayPlaylist(playlists) {
   var maindiv = document.getElementById("maindiv");
   maindiv.className = "maindiv";
 
-  playlists.forEach(function (playlist) {
+  playlists.forEach((playlist) => {
     var listdiv = document.createElement("div");
     listdiv.className = "listdiv";
 
