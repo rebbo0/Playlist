@@ -2,9 +2,11 @@ var xmlhttp = new XMLHttpRequest();
 var url = "playlist.json";
 
 xmlhttp.onreadystatechange = function () {
-  var jsonData = JSON.parse(this.responseText);
-  displayPlaylist(jsonData);
-};
+  if (this.readyState == 4 && this.status == 200) {
+    var jsonData = JSON.parse(this.responseText);
+    displayPlaylist(jsonData);
+  }
+}
 
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
@@ -45,3 +47,4 @@ function displayPlaylist(playlists) {
 
 
 }
+
