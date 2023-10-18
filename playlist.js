@@ -22,9 +22,11 @@ function displayPlaylist(playlists){
         listname.className="listname";
         var listowner = document.createElement('h3');
         listowner.className = "listowner";
-        var listtitles = document.createElement
+        var listtitles = document.createElement('div');
+        listtitles.className = "listtitles";
 
-
+        
+        
         maindiv.appendChild("listdiv");
     });
 }
