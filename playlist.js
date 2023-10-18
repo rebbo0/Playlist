@@ -6,26 +6,42 @@ xmlhttp.onreadystatechange = function () {
   displayPlaylist(jsonData);
 };
 
-xmlhttp.open("GET", url);
+xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function displayPlaylist(playlists) {
   var maindiv = document.getElementById("maindiv");
   maindiv.className = "maindiv";
 
+  var listdiv;
   playlists.forEach((playlist) => {
-    var listdiv = document.createElement("div");
+    listdiv = document.createElement("div");
     listdiv.className = "listdiv";
-
-        var listname = document.createElement('h2');
-        listname.className="listname";
-        var listowner = document.createElement('h3');
-        listowner.className = "listowner";
-        var listtitles = document.createElement('div');
-        listtitles.className = "listtitles";
-
+    
+    
+    var listname = document.createElement('h2');
+    listname.className="listname";
+    listname.textContent = playlist.name;
+    listdiv.appendChild(listname);
+    var listowner = document.createElement('h3');
+    listowner.className = "listowner";
+    
+    var listtitles = document.createElement('div');
+    listtitles.className = "listtitles";
         
+        playlist.songs.forEach((song) => {
+            var songtitle = document.createElement('p');
+            songtitle.className = "songtitle";
+            var songinterpret = document.createElement('p');
+            songinterpret.className = "songinterpret";
+            var songlength = document.createElement('p');
+            songlength.className = "songlength";
+
+        });        
         
-        maindiv.appendChild("listdiv");
+        maindiv.appendChild(listdiv);
+
     });
+
+
 }
