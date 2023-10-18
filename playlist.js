@@ -27,9 +27,11 @@ function displayPlaylist(playlists) {
     listdiv.appendChild(listname);
     var listowner = document.createElement('h3');
     listowner.className = "listowner";
-    
+    listowner.textContent = playlist.owner;
+    listdiv.appendChild(listowner);
     var listtitles = document.createElement('div');
     listtitles.className = "listtitles";
+    
         
         playlist.songs.forEach((song) => {
             var songtitle = document.createElement('p');
