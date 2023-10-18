@@ -2,21 +2,20 @@ var xmlhttp = new XMLHttpRequest();
 var url = "playlist.json";
 
 xmlhttp.onreadystatechange = function () {
-    var jsonData = JSON.parse(this.responseText);
-    displayPlaylist(jsonData.playlists);    
+  var jsonData = JSON.parse(this.responseText);
+  displayPlaylist(jsonData);
 };
 
 xmlhttp.open("GET", url);
 xmlhttp.send();
 
-function displayPlaylist(playlists){
-    var maindiv = document.getElementById('maindiv');
-    maindiv.className = "maindiv";
+function displayPlaylist(playlists) {
+  var maindiv = document.getElementById("maindiv");
+  maindiv.className = "maindiv";
 
-    playlists.forEach(function (playlist)
-    {
-        var listdiv = document.createElement('div');
-        listdiv.className="listdiv";
+  playlists.forEach((playlist) => {
+    var listdiv = document.createElement("div");
+    listdiv.className = "listdiv";
 
         var listname = document.createElement('h2');
         listname.className="listname";

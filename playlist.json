@@ -1,9 +1,8 @@
-{
-  "playlists":[
+[
     {
         "name": "My Mix",
         "owner": "Davidoida",
-        "titles": [
+        "songs": [
           {
             "title": "Call me maybe",
             "interpret": "Carly Rae Jepsen",
@@ -19,7 +18,7 @@
     {
       "name": "My cool Mix",
       "owner": "Robin123",
-      "titles": [
+      "songs": [
         {
           "title":"All I Want for Christmas Is You",
           "interpret":"Mariah Carey",
@@ -32,6 +31,5 @@
         }
       ]
     }
-    ]
+]
   
-}
