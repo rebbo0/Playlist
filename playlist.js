@@ -60,9 +60,10 @@ function displayPlaylist(playlists) {
     var addbtn = document.createElement('div');
     addbtn.className = "addsong";
     addbtn.onclick=addSong(i);
+    addbtn.textContent = "+";
 
-    listdiv.appendChild(addbtn);
     listdiv.appendChild(listtitles);
+    listdiv.appendChild(addbtn);
     maindiv.appendChild(listdiv);
 
     i++;
@@ -72,5 +73,5 @@ function displayPlaylist(playlists) {
 }
 
 function addSong(i){
-  
+
 }
