@@ -1,5 +1,6 @@
 [
     {
+        "id":"0",
         "name": "My Mix",
         "owner": "Davidoida",
         "songs": [
@@ -16,6 +17,7 @@
         ]
     },
     {
+      "id":"1",
       "name": "My cool Mix",
       "owner": "Robin123",
       "songs": [

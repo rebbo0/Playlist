@@ -24,10 +24,10 @@
 }
 .addbtn{
     display: inline;
-    padding-left: 0.4vw;
-    padding-right: 0.4vw;
-    padding-top: 0.2vh;
-    padding-bottom: 0.2vh;
+    padding-left: 0.9vh;
+    padding-right: 0.9vh;
+    padding-top: 0.4vh;
+    padding-bottom: 0.5vh;
     border: 1px solid black;
     border-radius: 3px;
     color: black;
