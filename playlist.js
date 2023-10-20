@@ -18,6 +18,7 @@ function displayPlaylist(playlists) {
   maindiv.className = "maindiv";
 
   var listdiv;
+  
   playlists.forEach((playlist) => {
     listdiv = document.createElement("div");
     listdiv.className = "listdiv";
@@ -40,6 +41,8 @@ function displayPlaylist(playlists) {
     listtitles.className = "listtitles";
     listtitles.id = i;
 
+    
+
     playlist.songs.forEach((song) => {
       var songtitle = document.createElement("h4");
       songtitle.className = "songtitle";
@@ -55,6 +58,10 @@ function displayPlaylist(playlists) {
       songlength.className = "songlength";
       songlength.textContent = song.length;
       listtitles.appendChild(songlength);
+      
+      var smalldivider = document.createElement('hr');
+      smalldivider.className = "smalldivider";
+      listtitles.appendChild(smalldivider);
 
     });
 

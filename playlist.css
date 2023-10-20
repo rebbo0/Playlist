@@ -24,8 +24,8 @@
 }
 .addbtn{
     display: inline;
-    padding-left: 0.3vw;
-    padding-right: 0.3vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
     padding-top: 0.2vh;
     padding-bottom: 0.2vh;
     border: 1px solid black;
@@ -40,4 +40,7 @@
     background-color: lightgray;
     border-radius: 3px;
     color: black;
+}
+.smalldivider{
+    border: 0.1vh dashed black;
 }
