@@ -20,6 +20,7 @@ function displayPlaylist(playlists) {
   playlists.forEach((playlist) => {
     listdiv = document.createElement("div");
     listdiv.className = "listdiv";
+    listdiv.id = playlist.id;
 
     var listname = document.createElement("h2");
     listname.className = "listname";
@@ -61,7 +62,9 @@ function displayPlaylist(playlists) {
 
     var addbtn = document.createElement("button");
     addbtn.className = "addbtn";
-    addbtn.onclick = function(){addSong(playlist.id)};
+    addbtn.onclick = function () {
+      addSong(playlist.id);
+    };
     addbtn.textContent = "+";
 
     listdiv.appendChild(listtitles);
@@ -71,5 +74,30 @@ function displayPlaylist(playlists) {
 }
 
 function addSong(id) {
-  console.log(id);
+  	popListModal(id);
+    openListModal(id);
+}
+
+function openListModal(id) {
+  var modal = document.getElementById("list-modal");
+  modal.style.display = "block";
+  
+}
+
+function closeListModal() {
+  var modal = document.getElementById("list-modal");
+  modal.style.display = "none";
+  var modaltitle =  document.getElementById("modal-title");
+  modaltitle.textContent = "";
+}
+
+
+function popListModal(id){
+  var modallisttitle = document.createElement('h2');
+  var titlename = document.getElementById(id).firstChild.textContent;
+  var modaltitle =  document.getElementById("modal-title");
+  modallisttitle.className = "modallisttitle";
+  modallisttitle.textContent = "Add to Playlist: "+ titlename;
+
+  modaltitle.appendChild(modallisttitle);
 }
