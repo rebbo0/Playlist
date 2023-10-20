@@ -12,7 +12,6 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function displayPlaylist(playlists) {
-  var i = 0;
   var maindiv = document.getElementById("maindiv");
   maindiv.className = "maindiv";
 
@@ -38,7 +37,6 @@ function displayPlaylist(playlists) {
 
     var listtitles = document.createElement("div");
     listtitles.className = "listtitles";
-    listtitles.id = i;
 
     playlist.songs.forEach((song) => {
       var songtitle = document.createElement("h4");
@@ -69,8 +67,6 @@ function displayPlaylist(playlists) {
     listdiv.appendChild(listtitles);
     listdiv.appendChild(addbtn);
     maindiv.appendChild(listdiv);
-
-    i++;
   });
 }
 
