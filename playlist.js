@@ -86,7 +86,6 @@ function openListModal(id) {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    //
 
     var mixes = [
       {
@@ -124,18 +123,40 @@ function openListModal(id) {
         ],
       },
     ];
-    
+
     const title = document.getElementById("stitle").value;
     const interpret = document.getElementById("sinterpret").value;
     const min = document.getElementById("min").value;
     const sec = document.getElementById("sec").value;
 
-    let song = {
-      title: "nuy",
-      interpret: "alex",
-      length: 2 + ":" + 2,
+
+    
+
+    const newSong = {
+      title: title,
+      interpret: interpret,
+      length: min + ":" + sec
     };
-    console.log(song);
+
+    var songs = document.getElementById(id).children[3];
+    var songtitle = document.createElement("h4");
+    songtitle.className = "songtitle";
+    songtitle.textContent = newSong.title;
+    songs.appendChild(songtitle);
+
+    var songinterpret = document.createElement("p");
+    songinterpret.className = "songinterpret";
+    songinterpret.textContent = newSong.interpret;
+    songs.appendChild(songinterpret);
+
+    var songlength = document.createElement("p");
+    songlength.className = "songlength";
+    songlength.textContent = newSong.length;
+    songs.appendChild(songlength);
+
+    var smalldivider = document.createElement("hr");
+    smalldivider.className = "smalldivider";
+    songs.appendChild(smalldivider);
   });
 }
 
@@ -144,6 +165,11 @@ function closeListModal() {
   modal.style.display = "none";
   var modaltitle = document.getElementById("modal-title");
   modaltitle.textContent = "";
+  var title = document.getElementById("stitle").value;
+  title.textContent = "";
+  var interpret = document.getElementById("sinterpret").value;
+  var min = document.getElementById("min").value;
+  var sec = document.getElementById("sec").value;
 }
 
 function popListModal(id) {
