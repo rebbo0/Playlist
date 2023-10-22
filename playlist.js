@@ -74,63 +74,26 @@ function displayPlaylist(playlists) {
 }
 
 function addSong(id) {
+  // currentPlaylistId = id;
   popListModal(id);
   openListModal(id);
 }
 
 function openListModal(id) {
+
+  // currentPlaylistId = id;
   var modal = document.getElementById("list-modal");
   modal.style.display = "block";
 
   var form = document.getElementById("formmodal");
 
-  form.addEventListener("submit", async (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-
-    var mixes = [
-      {
-        id: "0",
-        name: "My Mix",
-        owner: "Davidoida",
-        songs: [
-          {
-            title: "Call me maybe",
-            interpret: "Carly Rae Jepsen",
-            length: "2:20",
-          },
-          {
-            title: "Big City Life",
-            interpret: "Mattafix",
-            length: "3:10",
-          },
-        ],
-      },
-      {
-        id: "1",
-        name: "My cool Mix",
-        owner: "Robin123",
-        songs: [
-          {
-            title: "All I Want for Christmas Is You",
-            interpret: "Mariah Carey",
-            length: "4:01",
-          },
-          {
-            title: "Last Christmas",
-            interpret: "Wham!",
-            length: "4:27",
-          },
-        ],
-      },
-    ];
 
     const title = document.getElementById("stitle").value;
     const interpret = document.getElementById("sinterpret").value;
     const min = document.getElementById("min").value;
     const sec = document.getElementById("sec").value;
-
-
-    
 
     const newSong = {
       title: title,
@@ -157,7 +120,11 @@ function openListModal(id) {
     var smalldivider = document.createElement("hr");
     smalldivider.className = "smalldivider";
     songs.appendChild(smalldivider);
-  });
+    form.removeEventListener("submit", handleSubmit);
+    closeListModal();
+  }
+  form.addEventListener("submit", handleSubmit);
+  
 }
 
 function closeListModal() {
@@ -165,11 +132,14 @@ function closeListModal() {
   modal.style.display = "none";
   var modaltitle = document.getElementById("modal-title");
   modaltitle.textContent = "";
-  var title = document.getElementById("stitle").value;
-  title.textContent = "";
-  var interpret = document.getElementById("sinterpret").value;
-  var min = document.getElementById("min").value;
-  var sec = document.getElementById("sec").value;
+  var title = document.getElementById("stitle");
+  title.value= "";
+  var interpret = document.getElementById("sinterpret");
+  interpret.value = "";
+  var min = document.getElementById("min");
+  min.value = "";
+  var sec = document.getElementById("sec");
+  sec.value = "";
 }
 
 function popListModal(id) {
