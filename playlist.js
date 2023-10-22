@@ -74,30 +74,84 @@ function displayPlaylist(playlists) {
 }
 
 function addSong(id) {
-  	popListModal(id);
-    openListModal(id);
+  popListModal(id);
+  openListModal(id);
 }
 
 function openListModal(id) {
   var modal = document.getElementById("list-modal");
   modal.style.display = "block";
-  
+
+  var form = document.getElementById("formmodal");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    //
+
+    var mixes = [
+      {
+        id: "0",
+        name: "My Mix",
+        owner: "Davidoida",
+        songs: [
+          {
+            title: "Call me maybe",
+            interpret: "Carly Rae Jepsen",
+            length: "2:20",
+          },
+          {
+            title: "Big City Life",
+            interpret: "Mattafix",
+            length: "3:10",
+          },
+        ],
+      },
+      {
+        id: "1",
+        name: "My cool Mix",
+        owner: "Robin123",
+        songs: [
+          {
+            title: "All I Want for Christmas Is You",
+            interpret: "Mariah Carey",
+            length: "4:01",
+          },
+          {
+            title: "Last Christmas",
+            interpret: "Wham!",
+            length: "4:27",
+          },
+        ],
+      },
+    ];
+    
+    const title = document.getElementById("stitle").value;
+    const interpret = document.getElementById("sinterpret").value;
+    const min = document.getElementById("min").value;
+    const sec = document.getElementById("sec").value;
+
+    let song = {
+      title: "nuy",
+      interpret: "alex",
+      length: 2 + ":" + 2,
+    };
+    console.log(song);
+  });
 }
 
 function closeListModal() {
   var modal = document.getElementById("list-modal");
   modal.style.display = "none";
-  var modaltitle =  document.getElementById("modal-title");
+  var modaltitle = document.getElementById("modal-title");
   modaltitle.textContent = "";
 }
 
-
-function popListModal(id){
-  var modallisttitle = document.createElement('h2');
+function popListModal(id) {
+  var modallisttitle = document.createElement("h2");
   var titlename = document.getElementById(id).firstChild.textContent;
-  var modaltitle =  document.getElementById("modal-title");
+  var modaltitle = document.getElementById("modal-title");
   modallisttitle.className = "modallisttitle";
-  modallisttitle.textContent = "Add to Playlist: "+ titlename;
+  modallisttitle.textContent = "Add to Playlist: " + titlename;
 
   modaltitle.appendChild(modallisttitle);
 }
